@@ -1,22 +1,21 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: ""
-    }
+      userName: "",
+    };
   }
 
   handleChange = (event) => {
-    this.setState({userName: event.target.value});
-  }
+    this.setState({ userName: event.target.value });
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.state.userName && this.props.onLogin(this.state.userName);
-    this.setState({userName: ""});
-  }
+  };
 
   render() {
     return (
@@ -32,8 +31,7 @@ class Login extends Component {
           <button type="submit">Login</button>
         </form>
       </div>
-
-    )
+    );
   }
 }
 
